@@ -105,23 +105,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 .cards-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    flex-wrap: wrap;
+    /* Permite saltar de línea si la pantalla es pequeña */
+    gap: 25px;
+    /* Reducido un poco para que quepan las 4 holgadamente */
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .menu-card {
     background: #ffffff;
-    border-radius: 28px;
-    width: 320px;
-    height: 420px;
+    border-radius: 24px;
+    width: 260px;
+    /* Redimensionado para dar espacio a la 4ta tarjeta */
+    height: 380px;
+    /* Proporción limpia para 260px de ancho */
     text-decoration: none;
     overflow: hidden;
     position: relative;
@@ -181,11 +186,13 @@ body {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    padding: 15px;
 }
 
 .card-title {
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    /* Un pelín más pequeño para que nombres largos no se rompan */
     font-weight: 700;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 12px rgba(0, 15, 35, 0.6);
