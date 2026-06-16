@@ -14,6 +14,11 @@
 
 <body>
 
+    <div id="carouselContainer" class="carousel-fullscreen-container">
+        <iframe id="carouselIframe" src="" frameborder="0"></iframe>
+        <button id="btnExitCarousel" class="btn-exit-carousel" title="Salir del Carrusel">✕</button>
+    </div>
+
     <div class="bg-interactive" id="bgInteractive">
         <div class="parallax-orb orb-1"></div>
         <div class="parallax-orb orb-2"></div>
@@ -102,6 +107,13 @@
 
         </div>
     </main>
+
+    <button id="btnCarousel" class="btn-carousel-float" title="Carrusel">
+        <svg viewBox="0 0 24 24" class="spinner-svg">
+            <path
+                d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L4.24 7.74C3.46 8.97 3 10.43 3 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
