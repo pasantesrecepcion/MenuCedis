@@ -25,10 +25,11 @@ document.addEventListener('mousemove', (e) => {
 // 2. LÓGICA DEL CARRUSEL EN PANTALLA COMPLETA
 // ==========================================
 
-// URLs del carrusel configuradas a 1 minuto (60000 ms) cada una
+// URLs del carrusel (incluyendo tu nuevo enlace de análisis)
 const carouselUrls = [
     "https://avande-recepcion.vercel.app/",
     "https://resilient-bonbon-aa43dd.netlify.app/",
+    "https://portalanalisis.vercel.app/",
     "https://logistica-inversa-nexocorp.web.app/dashboard.html"
 ];
 
@@ -42,7 +43,6 @@ const btnExitCarousel = document.getElementById('btnExitCarousel');
 
 // Iniciar el Carrusel y solicitar pantalla completa
 btnCarousel.addEventListener('click', () => {
-    // Forzar pantalla completa mediante API oficial del navegador
     const docElm = document.documentElement;
     if (docElm.requestFullscreen) {
         docElm.requestFullscreen();
@@ -54,12 +54,10 @@ btnCarousel.addEventListener('click', () => {
         docElm.webkitRequestFullscreen();
     }
 
-    // Mostrar el contenedor del iframe e inicializar primera URL
     carouselContainer.classList.add('active');
     currentUrlIndex = 0;
     carouselIframe.src = carouselUrls[currentUrlIndex];
 
-    // Configurar ciclo infinito para cambiar de página cada 1 minuto (60000ms)
     carouselInterval = setInterval(() => {
         currentUrlIndex = (currentUrlIndex + 1) % carouselUrls.length;
         carouselIframe.src = carouselUrls[currentUrlIndex];
@@ -79,7 +77,6 @@ function stopCarousel() {
 
 btnExitCarousel.addEventListener('click', stopCarousel);
 
-// Si el usuario sale de pantalla completa apretando la tecla "ESC", cerramos el carrusel también
 document.addEventListener('fullscreenchange', () => {
     if (!document.fullscreenElement) {
         stopCarousel();
